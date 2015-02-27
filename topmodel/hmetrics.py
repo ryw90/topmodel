@@ -1,6 +1,20 @@
 import numpy as np
 
 
+def all_metrics(hist):
+    return {
+        'thresholds': hist['probs'],
+        'score_distribution': hist['totals'],
+        'trues': hist['trues'],
+        'precisions': precisions(hist),
+        'recalls': recalls(hist),
+        'fprs': fprs(hist),
+        'marginal_precisions': marginal_precisions(hist),
+        'brier': brier(hist),
+        'logloss': logloss(hist),
+    }
+
+
 def recalls(hist):
     # true positive rate
     # TP / (TP + FN)
