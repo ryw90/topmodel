@@ -3,7 +3,6 @@
 import os
 import subprocess
 
-# for s3 from python
 from boto.s3.connection import S3Connection
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +25,8 @@ class FileSystem(object):
 
 class S3FileSystem(object):
 
-    def __init__(self, bucket_name, aws_access_key_id, aws_secret_access_key, security_token=None):
+    def __init__(self, bucket_name, aws_access_key_id,
+                 aws_secret_access_key, security_token=None):
         conn = S3Connection(
             aws_access_key_id=aws_access_key_id,
             aws_secret_access_key=aws_secret_access_key,

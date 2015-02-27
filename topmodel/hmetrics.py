@@ -52,7 +52,9 @@ def precisions(hist):
 
 
 def marginal_precisions(hist):
-    return map(lambda x: x[0] * 1.0 / x[1] if x[1] != 0 else None, zip(hist['trues'], hist['totals']))
+    return map(
+        lambda x: x[0] * 1.0 / x[1] if x[1] != 0 else None,
+        zip(hist['trues'], hist['totals']))
 
 
 def brier(hist):

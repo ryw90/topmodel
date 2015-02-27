@@ -39,8 +39,8 @@ def draw_labels(ax, xs, ys, thresholds, labels_left=False):
         coords = (x + 0.01, y)
         if labels_left:
             coords = (x - 0.190, y - 0.01)
-        annotation = "{threshold}: [{x},{y}] ".format(x=x_round, y=y_round,
-                                                      threshold=threshold_round)
+        annotation = "{threshold}: [{x},{y}] ".format(
+            x=x_round, y=y_round, threshold=threshold_round)
         ax.annotate(annotation, coords, fontproperties=font)
 
 
@@ -63,8 +63,9 @@ def plot_scatter(x, y, xlabel, ylabel, ax=None):
     return save_image()
 
 
-def plot_xy(xs, ys, thresholds, xlabel, ylabel, labels=True, labels_left=False,
-            ax=None, xlim=(0, 1), ylim=(0, 1), autofmt_xdate=False, **plot_kwargs):
+def plot_xy(xs, ys, thresholds, xlabel, ylabel,
+            labels=True, labels_left=False, ax=None,
+            xlim=(0, 1), ylim=(0, 1), autofmt_xdate=False, **plot_kwargs):
     if ax is None:
         fig, ax = plt.subplots()
         if autofmt_xdate:
@@ -83,7 +84,9 @@ def plot_xy(xs, ys, thresholds, xlabel, ylabel, labels=True, labels_left=False,
     return save_image()
 
 
-def plot_xy_bootstrapped(xs, ys, thresholds, xlabel, ylabel, labels=False, labels_left=False, ax=None, label=None, **plot_kwargs):
+def plot_xy_bootstrapped(xs, ys, thresholds, xlabel, ylabel,
+                         labels=False, labels_left=False,
+                         ax=None, label=None, **plot_kwargs):
     if ax is None:
         fig, ax = plt.subplots()
     for i in range(1, len(xs)):
