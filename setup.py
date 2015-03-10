@@ -7,6 +7,6 @@ setup(name='topmodel',
       description='Model evaluation',
       author='Julia Evans',
       author_email='julia@stripe.com',
-      install_requires=['pandas==0.13.0', 'boto==2.25.0'],
+      install_requires=['pandas==0.13.1', 'boto==2.34.0'],
       packages=['topmodel'],
       )
